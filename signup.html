@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" href="/images/app-logo.ico" type="image/x-icon">
+
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/signup.css">
+        <script src="js/signup.js" defer></script>
+
+        <title>Registro en Listenlist</title>
+    </head>
+
+    <body>
+        <main>
+            <div class="wrapper">
+                <div class="main__card">
+                    <div class="card__left">
+                        <div class="app__info">
+                            <a class="app__link" href="/index.html"><img src="/images/index/app-logo-white.webp" alt="Logo">
+                                <h1>Listenlist</h1>
+                            </a>
+                            <p>Busca, descubre y colecciona música para escuchar después.</p>
+                        </div>
+                    </div>
+                    <div class="card__right">
+                        <form id="form" class="form">
+                            <h2>Crear cuenta</h2>
+
+                            <div class="input__container">
+                                <input autocomplete="off" type="text" name="username" placeholder="Usuario">
+                                <p>Entre 3-7 caracteres, solo letras y numeros</p>
+                            </div>
+
+                            <div class="input__container">
+                                <input autocomplete="off" type="email" name="email" placeholder="Email">
+                                <p>Debe ser del formato: ejemplo@mail.com</p>
+                            </div>
+
+                            <div class="input__container">
+                                <input autocomplete="off" type="password" name="password" placeholder="Contraseña">
+                                <p>Minimo 8 caracteres, debe incluir al menos una letra y numero</p>
+                            </div>
+
+                            <div class="input__container">
+                                <input autocomplete="off" type="password" name="passwordCheck" placeholder="Confirmar contraseña">
+                                <p>Debe coincidir con la contraseña</p>
+                            </div>
+
+                            <p class="redirect">Ya tienes cuenta? <a href="/login.html">Haz clic aqui para ingresar.</a></p>
+
+                            <input type="submit" value="Registrar" disabled>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+
+</html>

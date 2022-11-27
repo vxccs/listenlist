@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(24, 24, 28);
+  font-family: 'Rubik', Helvetica, Arial, sans-serif;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.app__info {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.app__info img {
+  height: 40px;
+}
+
+.right {
+  height: 80%;
+}
+
+.right img {
+  width: 100%;
+  max-height: 100%;
+  border-radius: 1rem;
+}

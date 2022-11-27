@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="shortcut icon" href="/images/app-logo.ico" type="image/x-icon">
+
+        <!-- google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/app.css">
+        <script src="js/app.js" defer></script>
+        <script src="js/htmlsnippets.js" defer></script>
+
+        <title>Listenlist</title>
+    </head>
+
+    <body>
+        <div class="settings__box"></div>
+        <nav>
+            <div class="navbar__wrapper">
+                <div class="navbar container d-flex align-center">
+                    <div class="navbar__logo">
+                        <a class="navbar__logo d-flex align-center" href="/index.html">
+                            <img class="navbar__image" src="/images/app-logo.png" alt="Listenlist Logo">
+                            <p>Listenlist</p>
+                        </a>
+                    </div>
+                    <div class="navbar__wrap d-flex align-center">
+                        <div class="navbar__search">
+                            <div class="search__icon d-flex align-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+                                    <path d="M23.707,22.293l-5.969-5.969a10.016,10.016,0,1,0-1.414,1.414l5.969,5.969a1,1,0,0,0,1.414-1.414ZM10,18a8,8,0,1,1,8-8A8.009,8.009,0,0,1,10,18Z" />
+                                </svg>
+                                <p>A</p>
+                            </div>
+                            <div class="search__bar d-flex align-center">
+                                <input class="search__input" autocomplete="off" type="text" id="search" placeholder="Buscar un album, artista, o canción...">
+                                <svg xmlns="http://www.w3.org/2000/svg" id="clear-search" viewbox="0 0 24 24">
+                                    <path d="M18,6h0a1,1,0,0,0-1.414,0L12,10.586,7.414,6A1,1,0,0,0,6,6H6A1,1,0,0,0,6,7.414L10.586,12,6,16.586A1,1,0,0,0,6,18H6a1,1,0,0,0,1.414,0L12,13.414,16.586,18A1,1,0,0,0,18,18h0a1,1,0,0,0,0-1.414L13.414,12,18,7.414A1,1,0,0,0,18,6Z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="navbar__settings d-flex align-center">
+                            <div id="generalSettings" class="d-flex align-center">
+                                <div class="theme-button"></div>
+                            </div>
+                            <div id="userSettings" class="navbar__user">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512">
+                                    <g>
+                                        <circle cx="256" cy="128" r="128" />
+                                        <path d="M256,298.667c-105.99,0.118-191.882,86.01-192,192C64,502.449,73.551,512,85.333,512h341.333   c11.782,0,21.333-9.551,21.333-21.333C447.882,384.677,361.99,298.784,256,298.667z" />
+                                    </g>
+                                </svg>
+                                <div class="user__settings nav__dropdown">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            <div class="top__wrapper">
+                <div id="search-container" class="top__container container">
+                    <h2 id="searchQuery"></h2>
+                    <div class="search__results">
+                        <div>
+                            <p class="search__title-type small-type-text">Albumes</p>
+                            <div class="search__albums"></div>
+                        </div>
+                        <div>
+                            <p class="search__title-type small-type-text">Canciones</p>
+                            <div class="search__tracks"></div>
+                        </div>
+                        <div>
+                            <p class="search__title-type small-type-text">Artistas</p>
+                            <div class="search__artists"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="result-container" class="top__container container">
+                    <div class="results__body d-flex">
+                        <div class="results__img">
+                            <img class="info__img" src="/images/artist-default.png" alt="">
+                        </div>
+                        <div class="results__info d-flex flex-wrap">
+                            <div class="info__left">
+                                <p class="info__type small-type-text"></p>
+                                <p class="info__title"></p>
+                                <p class="info__subtitle"></p>
+                                <p class="info__info"></p>
+                                <div class="info__buttons d-flex align-center">
+                                    <button id="openSpotify" type="button">
+                                        <svg viewbox="0 0 24 24">
+                                            <g>
+                                                <g>
+                                                    <g>
+                                                        <path d="M12,0C5.373,0,0,5.373,0,12c0,6.628,5.373,12,12,12c6.628,0,12-5.372,12-12C24,5.373,18.628,0,12,0z M17.503,17.308     c-0.216,0.354-0.676,0.464-1.028,0.249c-2.818-1.722-6.365-2.111-10.542-1.157c-0.403,0.092-0.804-0.16-0.896-0.562     c-0.092-0.402,0.159-0.804,0.563-0.895c4.571-1.045,8.492-0.595,11.655,1.338C17.608,16.495,17.719,16.956,17.503,17.308z      M18.972,14.041c-0.271,0.44-0.847,0.578-1.287,0.308c-3.225-1.982-8.142-2.557-11.958-1.398C5.233,13.1,4.71,12.821,4.56,12.327     c-0.149-0.495,0.13-1.016,0.624-1.167c4.358-1.323,9.776-0.682,13.48,1.594C19.104,13.025,19.242,13.601,18.972,14.041z      M19.098,10.638C15.23,8.341,8.85,8.13,5.157,9.251c-0.593,0.18-1.22-0.155-1.4-0.748c-0.18-0.593,0.155-1.22,0.748-1.4     c4.239-1.287,11.285-1.038,15.738,1.605c0.533,0.317,0.708,1.005,0.392,1.538C20.32,10.779,19.63,10.955,19.098,10.638z" />
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </svg>
+                                    </button>
+                                    <button id="addToCollection" type="button">Agregar a colección</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collection container">
+                <h1>Mi lista</h1>
+                <div class="collection__settings d-flex align-center">
+                    <div class="filters__left d-flex align-center">
+                        <div class="colecciones__wrapper">
+                            <div class="colecciones__title d-flex align-center">
+                                Ver colecciones
+                                <svg viewbox="4 4 17 17" xmlns="http://www.w3.org/2000/svg">
+                                    <g>
+                                        <path fill="none" d="M0 0h24v24H0z" />
+                                        <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="colecciones__dropdown colecciones__dropdown-pos">
+                                <form class="newTagForm">
+                                    <input autocomplete="off" type="text" name="newTag" placeholder="Nueva coleccion">
+                                    <input id="newCollection" type="submit" value="+">
+                                </form>
+                                <div class="tags__dropdown"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filters__right d-flex align-center">
+                        <div class="ordenar__wrapper">
+                            <div class="colecciones__title ordenar__btn">Ordenar</div>
+                            <div class="colecciones__dropdown ordenar__dropdown">
+                                <div class="tags__dropdown">
+                                    <div class="tag__dropdown small-type-text ordenar__titulo">Ordenar por</div>
+                                    <div class="tag__dropdown d-flex align-center sort__item">Titulo</div>
+                                    <div class="tag__dropdown d-flex align-center sort__item">Artista</div>
+                                    <div class="tag__dropdown d-flex align-center sort__item">Fecha de lanzamiento</div>
+                                    <div class="tag__dropdown d-flex align-center sort__item">Duración</div>
+                                    <div class="tag__dropdown d-flex align-center sort__item">Popularidad</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="colecciones__subtitle small-type-text"></div>
+                <div class="card__group">
+                </div>
+            </div>
+
+            <div class="mensaje__container">
+                Error!
+            </div>
+        </main>
+    </body>
+
+</html>
